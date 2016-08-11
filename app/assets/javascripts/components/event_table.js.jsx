@@ -4,7 +4,7 @@ var EventTable = React.createClass({
     this.props.events.forEach(function(event) {
       events.push(<Event event={event}
                          key={'event' + event.id}/>);
-    });
+    }.bind(this));
     return(
       <table className="table table-striped">
         <thead>
