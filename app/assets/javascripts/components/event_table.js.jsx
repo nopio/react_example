@@ -2,12 +2,16 @@ var EventTable = React.createClass({
   handleDeleteRecord: function(event) {
     this.props.handleDeleteRecord(event);
   },
+  handleUpdateRecord: function(old_event, event) {
+    this.props.handleUpdateRecord(old_event, event);
+  },
   render: function() {
     var events = [];
     this.props.events.forEach(function(event) {
       events.push(<Event event={event}
                          key={'event' + event.id}
-                         handleDeleteRecord={this.handleDeleteRecord} />)
+                         handleDeleteRecord={this.handleDeleteRecord}
+                         handleUpdateRecord={this.handleUpdateRecord} />)
     }.bind(this));
     return(
       <table className="table table-striped">
