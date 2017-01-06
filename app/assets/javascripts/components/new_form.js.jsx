@@ -22,7 +22,7 @@ var NewForm = React.createClass({
         method: 'POST',
         data: { event: self.state },
         success: function(data) {
-          self.props.handleAdd(data);
+          self.props.handleAdd();
           self.setState(self.getInitialState());
         },
         error: function(xhr, status, error) {
